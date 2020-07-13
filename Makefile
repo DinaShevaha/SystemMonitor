@@ -1,5 +1,4 @@
 TARGET = system_monitor
-
 DEBUG           ?= 0
 SRC_DIR		= ./src/
 OBJ_DIR		= ./obj/
