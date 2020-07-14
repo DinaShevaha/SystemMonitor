@@ -1,5 +1,7 @@
-helpFuncs.c 
+header.h 
 =======================================
 
-.. c:autodoc:: src/helpFuncs.c 
+
+.. c:autodoc:: src/header.h 
    :clang: -DHAWKMOTH -I../doc -I../src gnu=18
+

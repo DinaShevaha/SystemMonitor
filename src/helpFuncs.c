@@ -1,12 +1,23 @@
 #include "header.h"
 #include <strings.h>
 
+/** 
+ * Error output function
+ * @str_error: parametr called in function error() 
+ */
 void error(char* str_error)
 {
-    printf("%s\n", str_error);
+    fprintf(stderr, "%s", str_error);
     exit(EXIT_FAILURE);
 }  
 
+/**
+ * The portion of the object that starts at character position start and spans len characters
+ * @start: position of the first character to be copied as a substring 
+ * @len: number of characters to include in the substring
+ *
+ * Return: a string object with a substring of this object
+ */
 char *substr(char const *s, unsigned int start, size_t len)
 {
     size_t i;
@@ -29,6 +40,12 @@ char *substr(char const *s, unsigned int start, size_t len)
     return (str);
 }
 
+/**
+ * Splits the data into: gb, mb, kb; allocates space for our string and contcatenates with the strcat command
+ * @mem: everything we read from the file and resulted in an int value
+ *
+ * Return: string in :c:func:`readMemInfo`
+ */
 char *fullMem(int mem)
 {
     char c_gb[20];
@@ -44,7 +61,7 @@ char *fullMem(int mem)
     if (!str)
         error("No memory");
     if (gb > 0)
-        strcat(str, strcat(c_gb, " Gb "));
+        strcat(str, strcat(c_gb, " Gb ")); /* strcat contcatenates (joins) two strings */
     if (mb > 0)
         strcat(str, strcat(c_mb, " Mb "));
     if (kb > 0)
@@ -52,6 +69,10 @@ char *fullMem(int mem)
     return (str);
 }
 
+/**
+ * Checks user's hostname
+ * @str: a string object with a substring of this object
+ */
 void checkHostname(char *str)
 {
     int i = 0;
@@ -64,6 +85,10 @@ void checkHostname(char *str)
     }
 }
 
+/** 
+ * Reads from the file we transferred, data about hostname 
+ * @system_info: pointer to the structure :c:type:`t_system`
+ */
 void printSystemInfo(t_system *system_info)
 {
     printf("hostname: %s", system_info->host_name);

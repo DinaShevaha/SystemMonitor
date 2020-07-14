@@ -45,7 +45,7 @@ clean:
 tidy: clean
 	rm -f $(TARGET)
 	rm -Rf $(OBJ_DIR)
-	@/bin/echo "-e" "\e[31m[system_monitor fcleaned]\e[0m"
+	@/bin/echo "-e" "\e[31m[system_monitor tidied]\e[0m"
 
 re: tidy all
 

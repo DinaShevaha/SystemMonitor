@@ -12,13 +12,15 @@ Welcome to SystemMonitor's documentation!
 
    get
 
+   header
+
    helpFuncs
 
    interface 
 
+   main
+
    read
-
-
 
 
 Indices and tables

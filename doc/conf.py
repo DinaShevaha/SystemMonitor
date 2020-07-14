@@ -34,7 +34,7 @@ extensions = [
 ]
 
 # Path to the root of the C source files for hawkmoth
-cautodoc_root = str(projdir)
+cautodoc_root = str(projdir) + '/'
 
 # Hawkmoth autodoc documentation
 cautodoc_compat = 'kernel-doc'

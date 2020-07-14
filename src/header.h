@@ -11,26 +11,37 @@
 #include <stdbool.h>
 #include <gtk/gtk.h>
 
-typedef struct  s_system
+/**
+ * Structure which stores data for transmission via a pointer
+ */
+struct s_system
 {
-    char host_name[256];
-    char *user_name;
-    char *uptime;
-    char *model_name;
-    char *cpu_MHz;
-    char *mem_avail;
-    char *mem_active;
-    int memAvail;
-    int memActive;
-} t_system;
+    char host_name[256];     
+    char *user_name;       
+    char *uptime;           
+    char *model_name;       
+    char *cpu_MHz;         
+    char *mem_avail;         
+    char *mem_active;       
+    int memAvail;            /* how much memory is available now */
+    int memActive;           /* how much memory is active now    */
+};
 
-typedef struct s_data
+/** Object implemented with :c:struct:`s_system` */
+typedef struct s_system t_system;
+
+/**
+ * Structure which stores data for transmission via a pointer
+ */
+struct s_data
 {
-    GtkWidget *hbox;
-    GtkWidget *window;
-    gboolean  firstLoop;
-} t_data;
+    GtkWidget *hbox;         
+    GtkWidget *window;       
+    gboolean  firstLoop;     
+};
 
+/** Object implemented with :c:struct:`s_data` */
+typedef struct s_data t_data;
 
 void readHostname(char* file_name, t_system *system_info);
 void readCpuInfo(char* file_name, t_system *system_info);
